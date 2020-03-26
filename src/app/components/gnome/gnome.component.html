@@ -1,0 +1,60 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>{{ gnome.name }}</mat-card-title>
+  </mat-card-header>
+  <mat-divider></mat-divider>
+  <img mat-card-image [src]="gnome.thumbnail">
+  <mat-divider></mat-divider>
+  <mat-card-content>
+    <table>
+      <tr>
+        <th>Age</th>
+        <td>{{ gnome.age | number }}</td>
+      </tr>
+      <tr>
+        <th>Weight</th>
+        <td>{{ gnome.weight | number:'.2-2' }}</td>
+      </tr>
+      <tr>
+        <th>Height</th>
+        <td>{{ gnome.height | number:'.2-2' }}</td>
+      </tr>
+      <tr>
+        <th>Hair color</th>
+        <td>{{ gnome.hair_color }}</td>
+      </tr>
+      <tr>
+        <th [ngClass]="{ 'top' : gnomeHasWork() }">Professions</th>
+        <td>
+          <mat-chip-list
+            *ngIf="gnomeHasWork(); else noWork"
+          >
+            <mat-chip *ngFor="let work of gnome.professions" color="primary" selected>
+              {{ work }}
+            </mat-chip>
+          </mat-chip-list>
+          <ng-template #noWork>
+            <span>This gnome hasn't work</span>
+          </ng-template>
+        </td>
+      </tr>
+      <tr>
+        <th [ngClass]="{ 'top' : gnomeHasFriends() }">Friends</th>
+        <td>
+          <mat-chip-list *ngIf="gnomeHasFriends(); else noFriends">
+            <mat-chip color="warn" selected (click)="showFriend(friend)" *ngFor="let friend of gnome.friends">
+              {{ friend }}
+            </mat-chip>
+          </mat-chip-list>
+          <ng-template #noFriends>
+            <span>This gnome hasn't friends</span>
+          </ng-template>
+        </td>
+      </tr>
+    </table>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" *ngIf="haveFriendsHistory()" (click)="backFriend()">Back to friend</button>
+    <button mat-raised-button color="primary" (click)="backList()">Back to list</button>
+  </mat-card-actions>
+</mat-card>

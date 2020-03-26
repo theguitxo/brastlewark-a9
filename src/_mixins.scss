@@ -1,0 +1,36 @@
+$xs: 600px;
+$s: 1024px;
+$m: 1440px;
+$l: 1920px;
+
+@mixin media($media) {
+  @if $media==xs {
+    @media (max-width: $xs - 1) {
+      @content;
+    }
+  }
+
+  @else if $media==sm {
+    @media (min-width: $xs) {
+      @content;
+    }
+  }
+
+  @else if $media==md {
+    @media (min-width: $s) {
+      @content;
+    }
+  }
+
+  @else if $media==lg {
+    @media (min-width: $m) {
+      @content;
+    }
+  }
+
+  @else if $media==xl {
+    @media (min-width: $l) {
+      @content;
+    }
+  }
+}

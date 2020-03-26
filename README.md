@@ -1,27 +1,37 @@
-# BrastlewarkA9
+# Brastlewark
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.3.
+With this application you can search gnomes of Brastlewark, see their information and browse trough their friends.
 
-## Development server
+Uses Angular 9 ([visit here](https://angular.io/)) as the development framework and Angular Material ([visit here]https://material.angular.io/)) for the look and feel.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+![Gnomes list](./list.png)
+Gnomes list (desktop view)
 
-## Code scaffolding
+![Gnome info](./gnome.jpg)
+Gnome info (mobile view)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Execution of the app
 
-## Build
+The first step is cloning this respository, with the instruction:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+~~~
+git clone https://github.com/theguitxo/brastlewark-a9.git
+~~~
 
-## Running unit tests
+Then enter in the folder of the app
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+~~~
+cd brastlewark-a9
+~~~
 
-## Running end-to-end tests
+Launch the development server with
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+~~~
+ng serve
+~~~
 
-## Further help
+And finally, open the browser and navigate to
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+~~~
+https://localhost:4200
+~~~

@@ -1,0 +1,50 @@
+<div class="form">
+  <form>
+    <mat-form-field>
+      <mat-label>To search</mat-label>
+      <input
+        matInput
+        placeholder="Input name to search..."
+        [(ngModel)]="searchWords"
+        name="searchWords">
+    </mat-form-field>
+    <div class="form-actions">
+      <button mat-raised-button color="primary" (click)="search()">Search</button>
+      <button mat-raised-button color="warn" (click)="reset()" *ngIf="showReset()">Reset</button>
+    </div>
+  </form>
+</div>
+
+<div class="list">
+  <mat-list *ngIf="showResults(); else noResults">
+    <mat-list-item *ngFor="let gnome of list">
+      <img matListAvatar [src]="gnome.thumbnail">
+      <h3 matLine> {{gnome.name}} </h3>   
+      <button 
+        mat-icon-button
+        color="primary"
+        (click)="loadGnome(gnome)"
+      >
+        <mat-icon>info</mat-icon>
+      </button>
+    </mat-list-item>
+  </mat-list>
+  <ng-template #noResults>
+    <div class="error">
+      <div class="icon">
+        <img src="../../../assets/error.icon.png">
+      </div>
+      <div class="message">Ups! Data not found!</div>
+    </div>
+  </ng-template>  
+</div>
+
+<div class="paginator" *ngIf="showResults()">
+  <mat-paginator
+    [length]="totalFiltered()"
+    [pageIndex]="page"
+    [pageSize]="itemsByPage"
+    [pageSizeOptions]="itemsByPageOptions"
+    (page)="changePage($event)"
+  ></mat-paginator>
+</div>

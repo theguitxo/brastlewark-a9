@@ -2,7 +2,7 @@
 
 With this application you can search gnomes of Brastlewark, see their information and browse trough their friends.
 
-Uses Angular 9 ([visit here](https://angular.io/)) as the development framework and Angular Material ([visit here]https://material.angular.io/)) for the look and feel.
+Uses Angular 9 ([visit here](https://angular.io/)) as the development framework and Angular Material ([visit here](https://material.angular.io/)) for the look and feel.
 
 ![Gnomes list](./list.png)
 Gnomes list (desktop view)
